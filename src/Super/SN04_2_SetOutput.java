@@ -85,7 +85,6 @@ public abstract class SN04_2_SetOutput {
 			IAgileClass iAgileClass = change.getAgileClass();
 			// IChange changeOrder = (IChange) change;
 			logger.log(1, "Get Change as Admin:" + change);
-			logger.log("正在清除欄位");
 			ITable affectedTable = SN04_2_GetInf.getAffectedTable(change);
 			ITable.ISortBy sortBy = affectedTable.createSortBy(
 					iAgileClass.getAttribute(ChangeConstants.ATT_AFFECTED_ITEMS_ITEM_TYPE),
@@ -183,7 +182,6 @@ public abstract class SN04_2_SetOutput {
 					ITable redLineTitleBlock = item.getTable(ItemConstants.TABLE_REDLINETITLEBLOCK);
 					IRow redlineRow = (IRow) redLineTitleBlock.iterator().next();
 					String cell = redlineRow.getValue(ItemConstants.ATT_TITLE_BLOCK_NUMBER).toString();
-					logger.log("RedlineRowTitleBlock：" + cell);
 					iItem.setValue(1599, cell);
 					check = true;
 				}

@@ -297,7 +297,6 @@ public class SN04_2_SetNumber extends SN04_2_SetOutput {
 			throws APIException {
 
 		try {
-			logger.log(">Checking Same Number");
 			IQuery query = (IQuery) admin.createObject(IQuery.OBJECT_TYPE, item.getAgileClass().getAPIName());
 			query.setCaseSensitive(false);
 			// 1001 = item number , 2011 = P2 text05
